@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h2 class="fs-1 text-center "> {{ publish.title }} </h2>
+
+  <div class="w-100">
+    <i class="m-2 text-end ">
+      Publicada el <small>{{ object.published_date }}</small>
+    </i>
+  </div>
+
+  <img class="w-100 img-circle" src="{{ object.image.url }}" alt="{{ object.title }}">
+
+  <div class="text-justify mt-2 fs-5 mb-4">
+    {{ object.content }}
+  </div>
+
+{% endblock content %}

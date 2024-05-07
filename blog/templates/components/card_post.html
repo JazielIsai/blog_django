@@ -1,0 +1,43 @@
+
+<article class="card w-75 m-auto">
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h1 class="card-title">
+          <a href="#">{{ title }}</a>
+        </h1>
+        <div class="card-subtitle small">
+          <time datetime="{{ date_published }}">
+            <i class="fas fa-calendar-alt mr-2"></i> {{ date_published }}
+          </time>
+        </div>
+        <hr />
+        <div class="card-text">
+          {{ content|slice:"180" }} ...
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4" >
+      <img class="img-fluid rounded-start" src="{{ image }}" alt="{{ alt_img }}" />
+    </div>
+
+    <div class="card-footer">
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-outline-primary">
+          <a href="{% url 'posts:view' key %}"><i class="fas fa-play mr-2"></i>Leer más</a>
+        </button>
+        <div class="text-muted">
+            {{ user }}
+        </div>
+        {% if enable %}
+          <div class="me-2 mx-2">
+            <a href="{% url 'posts:edit' pk %}">
+              Editar
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</article>

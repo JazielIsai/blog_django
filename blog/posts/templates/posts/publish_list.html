@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% for image in publish_list %}
+  {% include 'components/card_post.html' with title=image.title image=image.image.url content=image.content date_published=image.published_date user=image.user key=image.pk enable=enable pk=image.pk %}
+  <div class="mb-2"></div>
+{% endfor %}
+
+{% endblock content %}

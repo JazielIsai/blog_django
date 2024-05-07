@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  
+
+{% for image in publish_list %}
+  {{ image.title }}
+  <img src="{{image.image.url}}" alt="{{image.name}}" style="width:150px;">
+  <p>{{image.title}}</p>
+{% endfor %}
+  
+{% endblock content %}
